@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Auto Spare Parts India</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+        .cart-container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background: #f4f4f4;
+            color: #555;
+        }
+        .total {
+            text-align: right;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .checkout-btn:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cart-container">
+        <h1>Your Shopping Cart</h1>
+        <table>
+            <tr>
+                <th>Part Name</th>
+                <th>Price (₹)</th>
+                <th>Quantity</th>
+                <th>Total (₹)</th>
+            </tr>
+            <tr>
+                <td>Maruti Suzuki Engine Assembly</td>
+                <td>₹85,000</td>
+                <td>1</td>
+                <td>₹85,000</td>
+            </tr>
+            <tr>
+                <td>Mahindra Brake Pad Set</td>
+                <td>₹3,500</td>
+                <td>2</td>
+                <td>₹7,000</td>
+            </tr>
+            <tr>
+                <td>Royal Enfield Air Filter</td>
+                <td>₹450</td>
+                <td>3</td>
+                <td>₹1,350</td>
+            </tr>
+            <tr>
+                <td>Tata Nexon Alloy Wheel</td>
+                <td>₹10,500</td>
+                <td>4</td>
+                <td>₹42,000</td>
+            </tr>
+        </table>
+
+        <div class="total">
+            <strong>Grand Total: ₹1,35,350</strong>
+        </div>
+
+        <button class="checkout-btn" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Engine Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .product-container {
+            background-color: white;
+            padding: 30px;
+            max-width: 700px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        img {
+            border-radius: 8px;
+        }
+
+        .action-buttons {
+            margin-top: 25px;
+        }
+
+        .action-buttons button {
+            padding: 12px 20px;
+            margin: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-cart {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .add-cart:hover {
+            background-color: #0056b3;
+        }
+
+        .buy-now {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .buy-now:hover {
+            background-color: #1e7e34;
+        }
+
+        .wishlist {
+            background-color: #ffc107;
+            color: black;
+        }
+
+        .wishlist:hover {
+            background-color: #e0a800;
+        }
+
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-container">
+        <h1>Petrol Engine Details</h1>
+
+        <img src="https://stimg2.cardekho.com/images/carNewsEditorImages/816x544/20200204_104015/25014/volkswagen0.jpg?impolicy=resize&imwidth=420" alt="Engine Image" width="400">
+
+        <h2>Description:</h2>
+        <p>
+            High-performance petrol engine designed for power, efficiency, and long-term reliability.
+            Compatible with most modern and classic vehicles in India.
+        </p>
+
+        <h2>Specifications:</h2>
+        <ul style="text-align: left; max-width: 500px; margin: auto;">
+            <li>Engine Type: Inline-4 Turbocharged</li>
+            <li>Displacement: 1998cc</li>
+            <li>Fuel Type: Petrol</li>
+            <li>Warranty: 5 Years or 100,000 km</li>
+        </ul>
+
+        <h2>Price:</h2>
+        <p><strong>₹1,80,000 INR</strong></p>
+
+        <h2>Stock Availability:</h2>
+        <p>In Stock: <strong>12 units</strong></p>
+
+        <h2>Seller Information:</h2>
+        <ul style="text-align: left; max-width: 500px; margin: auto;">
+            <li>Seller: AutoZone Parts India Pvt. Ltd.</li>
+            <li>Rating: ★★★★☆ (4.5/5)</li>
+            <li>Location: Mumbai, Maharashtra</li>
+        </ul>
+
+        <h2>Shipping Details:</h2>
+        <ul style="text-align: left; max-width: 500px; margin: auto;">
+            <li>Estimated Delivery: 3-5 Business Days (India)</li>
+            <li>Shipping Cost: Free</li>
+            <li>Return Policy: 30-Day Return Window</li>
+        </ul>
+
+        <h2>Customer Reviews:</h2>
+        <ul style="text-align: left; max-width: 500px; margin: auto;">
+            <li><strong>Alex:</strong> "Engine quality was top-notch. Installed and running smoothly!"</li>
+            <li><strong>Sophia:</strong> "Great price and fast shipping, totally recommend!"</li>
+        </ul>
+
+        <div class="action-buttons">
+            <button class="add-cart" onclick="addToCart()"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+            <button class="buy-now" onclick="buyNow()"><i class="fas fa-bolt"></i> Buy Now</button>
+            <button class="wishlist" onclick="addToWishlist()"><i class="fas fa-heart"></i> Wishlist</button>
+        </div>
+
+        <p style="margin-top: 20px;"><a href="car_parts.html">← Back to Car Parts</a></p>
+    </div>
+
+    <script>
+        function addToCart() {
+            alert("✅ Product added to your cart!");
+        }
+
+        function buyNow() {
+            // Redirect to checkout page
+            window.location.href = "checkout.html";
+        }
+
+        function addToWishlist() {
+            alert("💖 Added to your wishlist!");
+        }
+    </script>
+
+</body>
+</html>
+

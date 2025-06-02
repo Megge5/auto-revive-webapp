@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Vehicle Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .popup {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        .popup-content {
+            background: white;
+            padding: 25px;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 8px;
+            text-align: center;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+        .popup-content h2 {
+            color: #c0392b;
+            margin-bottom: 10px;
+        }
+        .popup-content p {
+            text-align: justify;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .popup-content button {
+            padding: 10px 20px;
+            border: none;
+            background: #2980b9;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-section {
+            display: none;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 700px;
+            margin: 30px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .form-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 12px 0 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .submit-btn {
+            margin-top: 20px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #004c99;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Copyright Violation Alert Popup -->
+<div class="popup" id="violationPopup">
+    <div class="popup-content">
+        <h2>⚠️ Model Rejected</h2>
+        <p>
+            Your previously submitted vehicle model has been flagged for violating copyright or intellectual property policies. 
+            We take these issues seriously and cannot accept models that infringe upon registered designs or trademarks.
+        </p>
+        <p>
+            Please create a new model that complies with copyright regulations. Ensure your design is original and fully your own work.
+        </p>
+        <button onclick="showForm()">Create a New Model</button>
+    </div>
+</div>
+
+<!-- Vehicle Model Creation Form -->
+<div class="form-section" id="modelForm">
+    <h2>Create Your Vehicle Model</h2>
+    <form method="POST" action="submit_vehicle.php" enctype="multipart/form-data">
+        
+        <label for="modelName">Model Name</label>
+        <input type="text" id="modelName" name="modelName" required>
+
+        <label for="vehicleType">Vehicle Type</label>
+        <select id="vehicleType" name="vehicleType" required>
+            <option value="">Select Type</option>
+            <option>Car</option>
+            <option>Truck</option>
+            <option>Bike</option>
+            <option>SUV</option>
+            <option>Van</option>
+            <option>Other</option>
+        </select>
+
+        <label for="manufacturer">Manufacturer / Creator Name</label>
+        <input type="text" id="manufacturer" name="manufacturer" required>
+
+        <label for="fuelType">Fuel Type</label>
+        <select id="fuelType" name="fuelType" required>
+            <option value="">Select Fuel</option>
+            <option>Petrol</option>
+            <option>Diesel</option>
+            <option>Electric</option>
+            <option>Hybrid</option>
+            <option>Other</option>
+        </select>
+
+        <label for="engineCapacity">Engine Capacity (cc or kWh)</label>
+        <input type="text" id="engineCapacity" name="engineCapacity">
+
+        <label for="dimensions">Dimensions (L x W x H in mm)</label>
+        <input type="text" id="dimensions" name="dimensions" placeholder="Example: 4000 x 1800 x 1600">
+
+        <label for="weight">Approximate Weight (kg)</label>
+        <input type="number" id="weight" name="weight">
+
+        <label for="compatibleParts">Compatible Spare Parts (Comma Separated)</label>
+        <input type="text" id="compatibleParts" name="compatibleParts" required>
+
+        <label for="modelImage">Upload Design Images or Blueprints</label>
+        <input type="file" id="modelImage" name="modelImage" accept=".jpg,.jpeg,.png,.pdf" required>
+
+        <label for="notes">Additional Notes</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Any extra info about your model..."></textarea>
+
+        <button type="submit" class="submit-btn">Submit Vehicle Model</button>
+    </form>
+</div>
+
+<script>
+    function showForm() {
+        document.getElementById("violationPopup").style.display = "none";
+        document.getElementById("modelForm").style.display = "block";
+    }
+</script>
+
+</body>
+</html>

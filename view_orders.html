@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Orders - Seller Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+        .back-button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Customer Orders</h2>
+
+<table>
+    <tr>
+        <th>Order ID</th>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price (₹)</th>
+        <th>Buyer Name</th>
+        <th>Shipping Address</th>
+        <th>Status</th>
+    </tr>
+    <!-- Example Orders -->
+    <tr>
+        <td>ORD001</td>
+        <td>Brake Pad Set</td>
+        <td>2</td>
+        <td>3000</td>
+        <td>Arjun Menon</td>
+        <td>Kakkanad, Kochi, Kerala</td>
+        <td>Pending</td>
+    </tr>
+    <tr>
+        <td>ORD002</td>
+        <td>Engine Oil Filter</td>
+        <td>1</td>
+        <td>450</td>
+        <td>Divya Nair</td>
+        <td>Vytilla, Kochi, Kerala</td>
+        <td>Shipped</td>
+    </tr>
+    <!-- Add more orders dynamically -->
+</table>
+
+<a href="seller_dashboard.html" class="back-button">Back to Dashboard</a>
+
+</body>
+</html>

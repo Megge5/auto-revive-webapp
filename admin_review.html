@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pending Vehicle Models - Admin Review</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f8f8f8; }
+        h2 { color: #333; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        th { background: #333; color: white; }
+        tr:nth-child(even) { background: #f2f2f2; }
+        a.button {
+            padding: 8px 15px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        a.button:hover { background: #0056b3; }
+        .approve { background: #28a745; }
+        .reject { background: #dc3545; }
+    </style>
+</head>
+<body>
+
+<h2>Pending Vehicle Model Submissions</h2>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Model Name</th>
+        <th>Type</th>
+        <th>Manufacturer</th>
+        <th>Submitted By</th>
+        <th>Image</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+
+<?php
+$conn = new mysqli("localhost", "root", "", "vehicle_app");
+if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
+
+$result = $conn->query("SELECT * FROM vehicle_models WHERE status = 'Pending'");
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>".$row['id']."</td>";
+        echo "<td>".$row['model_name']."</td>";
+        echo "<td>".$row['vehicle_type']."</td>";
+        echo "<td>".$row['manufacturer']."</td>";
+        echo "<td>".$row['submitted_by']."</td>";
+        echo "<td><img src='".$row['image_path']."' width='100'></td>";
+        echo "<td>".$row['status']."</td>";
+        echo "<td>
+            <a class='button approve' href='update_status.php?id=".$row['id']."&action=approve'>Approve</a>
+            <a class='button reject' href='update_status.php?id=".$row['id']."&action=reject'>Reject</a>
+        </td>";
+        echo "</tr>";
+    }
+} else {
+    echo "<tr><td colspan='8'>No pending models.</td></tr>";
+}
+$conn->close();
+?>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Your Vehicle - AutoRevive</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .selection-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        select, input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="selection-box">
+    <h2>Select Your Vehicle</h2>
+    <form action="home.html" method="GET">
+
+        <label for="brand">Vehicle Make (Brand):</label>
+        <select id="brand" name="brand" required>
+            <option value="">-- Select Make --</option>
+            <option value="Maruti">Maruti</option>
+            <option value="Hyundai">Hyundai</option>
+            <option value="Tata">Tata</option>
+            <option value="Mahindra">Mahindra</option>
+            <option value="Toyota">Toyota</option>
+        </select>
+
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" placeholder="e.g. Swift / Nexon" required>
+
+        <label for="variant">Variant / Trim Level:</label>
+        <input type="text" id="variant" name="variant" placeholder="e.g. ZXi / XZ+" required>
+
+        <label for="year">Manufacturing Year:</label>
+        <select id="year" name="year" required>
+            <option value="">-- Select Year --</option>
+            <script>
+                let year = new Date().getFullYear();
+                for (let i = year; i >= 1995; i--) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                }
+            </script>
+        </select>
+
+        <label for="fuel">Fuel Type:</label>
+        <select id="fuel" name="fuel" required>
+            <option value="">-- Select Fuel Type --</option>
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Electric">Electric</option>
+            <option value="Hybrid">Hybrid</option>
+        </select>
+
+        <label for="engine">Engine Type / Engine Code:</label>
+        <input type="text" id="engine" name="engine" placeholder="e.g. K12N, Revotron" required>
+
+        <label for="transmission">Transmission Type:</label>
+        <select id="transmission" name="transmission" required>
+            <option value="">-- Select Transmission --</option>
+            <option value="Manual">Manual</option>
+            <option value="Automatic">Automatic</option>
+            <option value="AMT">AMT</option>
+            <option value="CVT">CVT</option>
+            <option value="DCT">DCT</option>
+        </select>
+
+        <label for="chassis">Chassis Number (optional):</label>
+        <input type="text" id="chassis" name="chassis" placeholder="For exact match (if available)">
+
+        <button type="submit">Proceed</button>
+
+    </form>
+</div>
+
+</body>
+</html>

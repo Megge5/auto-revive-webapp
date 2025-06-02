@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Auto Spare Parts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2, h3 {
+            text-align: center;
+            color: #333;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .summary-item {
+            margin: 5px 0;
+        }
+        .total {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 10px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #34495e;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Checkout</h2>
+
+    <div class="section">
+        <h3>Order Summary</h3>
+        <div class="summary-item">1x Maruti Suzuki Swift Engine Oil Filter — ₹450</div>
+        <div class="summary-item">2x Bosch Wiper Blades — ₹750 each</div>
+        <div class="summary-item">1x Amaron Car Battery — ₹4,200</div>
+        <div class="total">Total: ₹6,150</div>
+    </div>
+
+    <div class="section">
+        <h3>Delivery Address</h3>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name">
+
+        <label for="address">Address</label>
+        <input type="text" id="address" placeholder="House No, Street, Locality">
+
+        <label for="city">City</label>
+        <input type="text" id="city" placeholder="Eg: Bengaluru">
+
+        <label for="pincode">PIN Code</label>
+        <input type="text" id="pincode" placeholder="Eg: 560001">
+
+        <label for="state">State</label>
+        <input type="text" id="state" placeholder="Eg: Karnataka">
+    </div>
+
+    <div class="section">
+        <h3>Payment Method</h3>
+        <label for="payment">Select Payment Option</label>
+        <select id="payment">
+            <option value="upi">UPI</option>
+            <option value="credit">Credit Card</option>
+            <option value="debit">Debit Card</option>
+            <option value="netbanking">Net Banking</option>
+            <option value="cod">Cash on Delivery</option>
+        </select>
+    </div>
+
+    <button class="btn">Place Order</button>
+</div>
+
+</body>
+</html>

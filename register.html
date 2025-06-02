@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoSpare — Register</title>
+    <style>
+        body {
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .register-container {
+            background: white;
+            padding: 40px 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 320px;
+            text-align: center;
+        }
+
+        .register-container img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        .register-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .register-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .register-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .register-container button:hover {
+            background-color: #005fa3;
+        }
+
+        .register-container .links {
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        .register-container .links a {
+            text-decoration: none;
+            color: #0077cc;
+        }
+
+        .register-container .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-container">
+        <!-- Replace with your company logo -->
+        <img src="https://via.placeholder.com/80?text=Logo" alt="AutoSpare Logo">
+
+        <h2>Create Account</h2>
+        <form action="registrationsuccess.html" method="post">
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+
+        <div class="links">
+            Already have an account? <a href="login.html">Login</a>
+        </div>
+    </div>
+
+</body>
+</html>
